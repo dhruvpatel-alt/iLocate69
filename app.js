@@ -40,7 +40,7 @@ app.use((error,req,res,next)=>{
     
 })
 mongoose.connect(`mongodb+srv://${user}:${pass}@cluster0.68xzs.mongodb.net/${name}?retryWrites=true&w=majority`).then(()=>{
-    app.listen(5000);
+    app.listen(process.env.PORT||5000);
 }).catch((error)=>{
 console.log(error);
 });
